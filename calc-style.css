@@ -1,16 +1,22 @@
+/*grey background to page*/
 body {
   background: #8080803d;
 }
-
+/*center contents of page*/
 .container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
 }
 
+/*center title text*/
+.desktop-align-center{
+  text-align: center;
+}
+
+/*calculator styling*/
 .calculator {
   display: flex;
   justify-content: center;
@@ -23,19 +29,12 @@ body {
   box-shadow: 2px 3px 5px 3px #62629c;
 
 }
-
+/*button specific styling*/
 .calc-btns{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   justify-content: space-around;
-
-
-}
-
-
-.desktop-align-center{
-  text-align: center;
 
 }
 
@@ -48,7 +47,6 @@ body {
 
 }
 
-
 .opr-btn{
   background: #32bf9f;
 }
@@ -57,6 +55,7 @@ body {
   background: #48a6f7;
 }
 
+/*calc screen styling*/
 .screen {
   background: #b5d6c552;
   margin: 1rem 10% 2rem 10%;

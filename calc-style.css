@@ -14,7 +14,7 @@
   background: grey;
   width: 340px;
   height: 288px;
-  padding: 5px;
+  padding: 20px 5px;
 
 }
 
@@ -23,7 +23,7 @@
   justify-content: center;
   flex-wrap: wrap;
   justify-content: space-around;
-  
+
 }
 
 

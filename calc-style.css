@@ -1,3 +1,7 @@
+body {
+  background: #8080803d;
+}
+
 .container {
   display: flex;
   flex-direction: column;

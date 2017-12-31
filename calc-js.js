@@ -9,7 +9,8 @@ window.onload = function (){
 }
 
 
-//display the calc buttons as they are clicked on
+
+//display numbers and operators as they are pushed. When equal is pushed --> calculate, when clear is pushed, clear everything
 function display(e){
   //get id of the clicked button
   var id = e.target.id;

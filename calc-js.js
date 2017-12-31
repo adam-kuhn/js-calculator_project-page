@@ -132,9 +132,7 @@ function displayAnswer(){
   //this will call on a variable "answer" that I will define below to be the result of the equation
   document.getElementById("calc-screen").innerHTML = eval(equation.join(""))
 
-  //old functions that worked as a simple calculator but doesn't account for order of operations
-  //getEquation();
-  //calculate()
+
 
 }
 //operator will always be at an odd placement, 1,3,5. True but not used in my code
@@ -155,14 +153,9 @@ for (j=0; j < getOperators.length; j++){
   if (getOperators[j] == "+" || getOperators[j] == "-" || getOperators[j] == "x" || getOperators[j] == "/" ){ //sending operators to new array (no white space)
     operator.push(getOperators[j])
   }
-  /*if (getOperators[j] == "x" || getOperators[j] == "/" ){ //sending x and / to new array (no white space) to determine BEDMAS
-    multDiv.push(getOperators[j])
-  }*/
-}
-  //console.log("operators " + operator)
-  //console.log("multDiv " + multDiv)
 
-    //console.log("length " + operator.length)
+}
+
 
 }
 
@@ -228,9 +221,6 @@ else if (numbers.length > 2){
     } else{
       answer = answer - numbers[i+1]
     }
-
-
-
 }
 }
 
@@ -238,33 +228,3 @@ else if (numbers.length > 2){
 
   document.getElementById("calc-screen").innerHTML = answer
 }
-
-//code attempting to correctly respond to the order of operations. However the solution does not require this, so I have stopped...doesn't work right now anyway
-  /* if (operator[i] == "x" && answer == 0){
-    answer = numbers[i] * numbers[i+1]
-    for (j=1; j<operator.length; j++){
-      if (operator[j] == "x"){
-        answer = answer * numbers[i+1]
-
-
-      } else if (operator[j] == "/")
-      answer = answer / numbers[i+1]
-    }
-    for (h=0; h<operator.length; h++){
-      if (operator[h] == "+"){
-        answer = answer + numbers[h+1]
-      }
-      else if (operator[h] == "-"){
-        answer = answer - numbers[h+1]
-      }
-    }
-
-  } else if (operator[i] == "/" && answer == 0){
-    answer = numbers[i] / numbers [i+1]
-    for (j=1; j<operator.length; j++){
-      if (operator[j] == "x"){
-        answer = answer * numbers[i+1]
-      } else if (operator[j] == "/")
-      answer = answer / numbers[i+1]
-    }
-  } */

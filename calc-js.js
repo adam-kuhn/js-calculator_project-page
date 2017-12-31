@@ -1,53 +1,52 @@
 var calcButtons = document.getElementsByClassName("button") //access number buttons on calculator
+let equation = [] //empty array to push the equation to. This will then be evaluated and produce the answer
 
 window.onload = function (){
-
-for (n=0; n<calcButtons.length; n++){
+//set eventlisteners to all buttons
+  for (n=0; n<calcButtons.length; n++){
   calcButtons[n].addEventListener('click', display)
+  }
 }
 
 
+//display the calc buttons as they are clicked on
+function display(e){
+  //get id of the clicked button
+  var id = e.target.id;
 
-}
-let equation = []
+  //when equals button is pushed, calculate the answer
+  if (id === "="){
+    displayAnswer()
+  }
+  //when AC/clear button is pushed, clear contents
+  else if (id === "clear"){
+    clear()
+  }
+  //when anything else is pushed, display button pushed and full equation
+  else{
+  document.getElementById("calc-screen").innerHTML = id
+  equation.push(id)
+  displayEquation()
+  }
+}//end display function
 
-//add a function where equation.length is TOO big --> respone with OK smarty
-
-
-//functions to display numbers/operators and push to the equation array, which will be used to perform the calculation
+//joins the equation array and displays on the calculator screen
 function displayEquation(){
   document.getElementById("calc-equation").innerHTML = equation.join("")
 
   if (equation.length > 20){
     return document.getElementById("calc-equation").innerHTML = "screen too small!"
   }
-}
-
-function display(e){
-  var id = e.target.id;
-  if (id === "="){
-    displayAnswer()
-  }
-  else if (id === "clear"){
-    clear()
-  }
-  else{
-  document.getElementById("calc-screen").innerHTML = id
-  equation.push(id)
-  displayEquation()
-}
-}
+} //end displayEquation
 
 
-//clear everything button
+//clears everything by reloading the page
 function clear (){
   window.location.reload();
 }
 
+//evaluates equation array by making it a string and running the eval function
 function displayAnswer(){
-  //this will call on a variable "answer" that I will define below to be the result of the equation
   document.getElementById("calc-screen").innerHTML = eval(equation.join(""))
-
-
 
 }

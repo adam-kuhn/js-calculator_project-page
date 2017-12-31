@@ -138,8 +138,8 @@ function displayAnswer(){
 //operator will always be at an odd placement, 1,3,5. True but not used in my code
 function getEquation(){
   //split the numbers out
-let operation = equation.join("");
-  getNumbers = operation.split(/\D/g); //removes everything but digits
+  let operation = equation.join("");
+    getNumbers = operation.split(/\D/g); //removes everything but digits
   for (x=0; x<getNumbers.length; x++){
     getNumbers[x] = Number(getNumbers[x]) //converts string to a number
     numbers.push(getNumbers[x])
@@ -149,82 +149,9 @@ let operation = equation.join("");
 
 //split the operators
 getOperators = operation.split(/\d/g) //removes everything but operator
-for (j=0; j < getOperators.length; j++){
-  if (getOperators[j] == "+" || getOperators[j] == "-" || getOperators[j] == "x" || getOperators[j] == "/" ){ //sending operators to new array (no white space)
+  for (j=0; j < getOperators.length; j++){
+    if (getOperators[j] == "+" || getOperators[j] == "-" || getOperators[j] == "x" || getOperators[j] == "/" ){ //sending operators to new array (no white space)
     operator.push(getOperators[j])
-  }
-
-}
-
-
-}
-
-
-let answer = 0;
-function calculate(){
-
-
-//working calc
-  for (i=0; i<operator.length; i++){
-  //2 number equations
-  if (numbers.length <= 2) {
-    if (operator[i] == "+"){
-       answer = numbers[i] + numbers[i+1]
-    }
-   else if (operator[i] == "-"){
-     answer = numbers[i] - numbers[i+1]
-   }
-   else if (operator[i] == "x"){
-     answer = numbers[i] * numbers[i+1]
-   }
-   else if (operator[i] == "/"){
-     answer = numbers[i] / numbers[i+1]
-   }
- }
-
-//equations with more than 2 numbers
-//look for x or / first, because of order of operations
-//if answer == 0 then this is the first term
-//need to prob do recursion for the + and - to order properly
-//0 messes up the + and -
-else if (numbers.length > 2){
-
-
-
- if (operator[i] == "x"){
-    if (i == 0){
-      answer = numbers[i] * numbers[i+1]
-    } else {
-      answer = answer * numbers[i+1]
     }
   }
-  else if (operator[i] == "/"){
-    if (i == 0){
-      answer = numbers[i] / numbers[i+1]
-    } else {
-      answer = answer / numbers[i+1]
-    }
-  }
-  else if (operator[i] == "+"){
-    if (i == 0) {
-      answer = numbers[i] + numbers[i+1]
-    }
-    else{
-      answer = answer + numbers[i+1]
-    }
-  }
-
-  else if (operator[i] == "-"){
-    if (i == 0)
-    {
-      answer = numbers[i] - numbers[i+1]
-    } else{
-      answer = answer - numbers[i+1]
-    }
-}
-}
-
-}
-
-  document.getElementById("calc-screen").innerHTML = answer
-}
+} //end get Equation function
